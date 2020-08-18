@@ -1,0 +1,47 @@
+<!doctype html>
+{% load static %}
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login here</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+  <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <script type='text/javascript' src='{% static 'js/jquery.particleground.js' %}'></script>
+  <script type='text/javascript' src='{% static 'js/demo.js' %}'></script>
+</head>
+
+<body>
+
+<div id="particles">
+  <div id="intro">
+    {% if not user.is_authenticated %}
+    <form class="area" action="{% url 'ABapp:log_user' %}" method="POST">
+      {% csrf_token %}<br>
+      Username: <input class="input100" type="text" name="username" placeholder="Username"><br><br>
+      Password: <input class="input100" type="password" name="password" placeholder="Password"><br><br>
+      <div class="danger" role="alert">
+      You must be registered to login here.<br><br>
+      </div>
+      <input type="submit" class="btn" value="SignIn">
+      <a href="{% url 'home' %}" class="btn">Home</a>
+      <a href="{% url 'Register' %}" class="btn">Register</a>
+    </form>
+    {% else %}<br>
+    <div class="jumbotron">
+      <h1>Welcome {{user.username}}, you are loggedin.</h1>
+      <h2>Go to &nbsp;<a href="{% url 'index' %}"><img src="{% static "image\automation.png" %}" width="30" height="30" class="kragha" title="ABapp"></a> &nbsp;
+      <a href="https://sapp.amazon.com/EGAMI/" title="EGAMI-FIXIT" target="_blank"> <img src="{% static "image\Egami.png" %}" width="30" height="30" alt=""> &nbsp;
+      <a href="https://sapp.amazon.com/rate/" title="CF rate" target="_blank"> <img src="{% static "image\rate.png" %}" width="30" height="30" alt=""></a> &nbsp;
+      <a href="https://sapp.amazon.com/Divein/" title="Divein" target="_blank"> <img src="{% static "image\divein.jpg" %}" width="30" height="30" alt=""></a> &nbsp;
+      <a href="https://sapp.amazon.com/VLT/" title="VLT" target="_blank"> <img src="{% static "image\vlt.png" %}" width="30" height="30" alt=""></a></h2> <br>
+      <a href="{% url 'home' %}" class="btn btn-outline-info" title="Go home to start again, dont forget to check template" >Home</a>
+      <a href="{% url 'ABapp:log_out' %}" class="btn btn-outline-info" title="Go home to start again, dont forget to check template" >Logout</a>
+    </div>
+    {% endif %}
+    <br>
+    <!-- <a href="{% url 'index' %}" class="btn btn-outline-info" >Home</a> -->
+  </div>
+</div>
+</body>
+</html>

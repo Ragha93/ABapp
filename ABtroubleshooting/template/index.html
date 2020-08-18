@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>@Kragha Projects</title>
+    <link rel="stylesheet" href="{% static "css/base.css" %}">
+    <link rel="shortcut icon" href="{% static "image\dashboard.png" %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@800&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="context">
+      <h1>@kragha projects <img src="{% static "image\dashboard.png" %}" width="34" height="34" class="kragha"> </h1>
+      <center>
+        <nav class="horizontal">
+          <input type="checkbox" id="toggle"/>
+          <label for="toggle">
+            <span class="fa fa-bars" title="Menu"></span>
+          </label>
+          <menu class="cover">
+            <li><a href="http://10.45.147.57:1993/" title="DPO Automation"> <img src="{% static "image\checklist.png" %}" width="30" height="30" alt=""> </a></li>
+            <li><a href="https://sapp.amazon.com/rate/" title="CF rate" target="_blank"> <img src="{% static "image\rate.png" %}" width="30" height="30" alt=""> </a></li>
+            <li><a href="https://sapp.amazon.com/Divein/" title="Divein" target="_blank"> <img src="{% static "image\divein.jpg" %}" width="30" height="30" alt=""> </a></li>
+            <li><a href="https://sapp.amazon.com/VLT/" title="VLT" target="_blank"> <img src="{% static "image\vlt.png" %}" width="30" height="30" alt=""> </a></li>
+            <li><a href="{% url 'index' %}" title="AB app"> <img src="{% static "image\automation.png" %}" width="30" height="30" alt=""> </a></li>
+            <li><a href="{% url 'Register' %}" title="Register here"><img src="{% static "image\register.png" %}" width="30" height="30" alt=""></a></li>
+            <li><a href="{% url 'ABapp:log_user' %}" title="Login"><img src="{% static "image\login.png" %}" width="30" height="30" alt=""></a></li>
+            <!-- <li><a class="fa fa-thumbs-up" href="#"></a></li>
+            <li><a class="fa fa-book" href="#"></a></li> -->
+            <li><a class="fas fa-tools" href="{% url 'index' %}"></a></li>
+          </menu>
+        </nav>
+      </center>
+
+    </div>
+  <div class="area" >
+             <ul class="circles">
+                     <li></li>
+                     <li></li>
+                     <li></li>
+                     <li></li>
+                     <li></li>
+                     <li></li>
+                     <li></li>
+                     <li></li>
+                     <li></li>
+                     <li></li>
+             </ul>
+  </div>
+<script type="text/javascript" src="{% static "js/index.js" %}"></script>
+  </body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>AB troubleshooting</title>
+    <link rel="stylesheet" href="{% static "css\base1.css" %}">
+    <link rel="shortcut icon" href="{% static "image\automation.png" %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    {% if user.is_authenticated and user.is_superuser and user.is_staff %}
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+     <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static "image\dashboard.png" %}" width="30" height="30" class="kragha" title="@kragha"></a> &nbsp;
+     <a class="navbar-brand" href="https://accolades.corp.amazon.com/profile/kragha" target="_blank"><img src="{% static 'image/like.png' %}" width="30" height="30" title="You can always thank me with Accolade"></a>
+     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+       <ul class="navbar-nav mr-auto">
+         <li class="nav-item active">
+           <a class="btn btn-outline-info" href="{% url 'index' %}" title="Home"><i class="fa fa-home" style="font-size:24px;"></i> <span class="sr-only"></span></a>
+         </li>&nbsp;
+         <li class="nav-item">
+           <a class="btn btn-outline-info" href="{% url 'admin:index' %}" title="Database"><i class="fa fa-database" style="font-size:24px;"></i> <span class="sr-only"></span></a>
+         </li>&nbsp;
+         <li class="nav-item">
+           <a class="btn btn-outline-primary" href="{% url 'change_password' %}">Welcome {{user.username}}</a>
+         </li>&nbsp;
+         <li class="nav-item">
+           <a class="btn btn-outline-warning" href="{% url 'Buyable' %}" title="Buyability Status"><i class="fa fa-download" style="font-size:24px;"></i> <span class="sr-only"></span></a>
+         </li>&nbsp;
+         <li class="nav-item">
+           <a class="btn btn-outline-warning" href="{% url 'Siteresult' %}" title="Site Status"><i class="fa fa-globe" style="font-size:24px;"></i> <span class="sr-only"></span></a>
+         </li>&nbsp;
+         <li class="nav-item">
+           <a class="btn btn-outline-warning" href="{% url 'Buyableall' %}" title="Download All"><i class="fa fa-cloud-download" style="font-size:24px;"></i> <span class="sr-only"></span></a>
+         </li>&nbsp;
+         <li class="nav-item">
+           <a class="btn btn-outline-info" href="{% url 'upload' %}" title="Upload input"><i class="fa fa-upload" style="font-size:24px;"></i> <span class="sr-only"></span></a>
+         </li>&nbsp;
+         <li class="nav-item">
+           <a class="btn btn-outline-info" href="{% url 'run' %}" title="Run Model" ><i class="fa fa-dashboard" style="font-size:24px;"></i> <span class="sr-only"></span></a>
+         </li>&nbsp;
+         <li class="nav-item">
+           <a class="btn btn-outline-info" href="{% url 'ABapp:log_out' %}" title="Logout"><i class="fa fa-sign-out" style="font-size:24px;"></i> <span class="sr-only"></span></a>
+         </li>&nbsp;&nbsp;&nbsp;
+         <li class="nav-item">
+           <a href="https://midway.amazon.com/" target="_blank" class="midway">
+           <img src="https://midway.amazon.com/assets/nextgen/favicon-ad8bbc621403f425c7b3a04d698f59735a441d670f9314e3b92d6281a4415bf3.ico" alt="Click here to login MIDWAY" height="40"></a>
+         </li>
+       </ul>
+       <form class="form-inline my-2 my-lg-0">
+         <input class="form-control mr-sm-2" type="search" placeholder="Amazon Internal Search" aria-label="Search" id="text1">
+         <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" onclick="javascript: window.open('https://is.amazon.com/search/ALL?q=' +document.getElementById('text1').value);">Internal Search</button>
+
+       </form>
+      </div>
+     </nav>
+    {% elif user.is_authenticated and user.is_staff and user.is_active %}
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+     <a class="navbar-brand" href="#"><img src="{% static "image\dashboard.png" %}" width="30" height="30" class="kragha" title="@kragha"></a>&nbsp;
+     <a class="navbar-brand" href="https://accolades.corp.amazon.com/profile/kragha" target="_blank"><img src="{% static 'image/like.png' %}" width="30" height="30" title="You can always thank me with Accolade"></a>&nbsp;</a>
+     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+       <ul class="navbar-nav mr-auto">
+         <li class="nav-item active">
+           <a class="btn btn-outline-info" href="{% url 'index' %}" title="Home"><i class="fa fa-home" style="font-size:24px;"></i> <span class="sr-only">(current)</span></a>
+         </li>&nbsp;
+         <li class="nav-item">
+           <a class="btn btn-outline-info" href="{% url 'admin:index' %}" title="Database"><i class="fa fa-database" style="font-size:24px;"></i> <span class="sr-only"></span></a>
+         </li>&nbsp;
+         <li class="nav-item">
+           <a class="btn btn-outline-primary" href="{% url 'change_password' %}">Welcome {{user.username}}</a>
+         </li>&nbsp;
+         <li class="nav-item">
+           <a class="btn btn-outline-warning" href="{% url 'Buyable' %}" title="Buyability Status"><i class="fa fa-download" style="font-size:24px;"></i> <span class="sr-only"></span></a>
+         </li>&nbsp;
+         <li class="nav-item">
+           <a class="btn btn-outline-warning" href="{% url 'Siteresult' %}" title="Site Status"><i class="fa fa-globe" style="font-size:24px;"></i> <span class="sr-only"></span></a>
+         </li>&nbsp;
+         <li class="nav-item">
+           <a class="btn btn-outline-warning" href="{% url 'Buyableall' %}" title="Download All"><i class="fa fa-cloud-download" style="font-size:24px;"></i> <span class="sr-only"></span></a>
+         </li>&nbsp;
+         <li class="nav-item">
+           <a class="btn btn-outline-info" href="{% url 'upload' %}"title="Upload input"><i class="fa fa-upload" style="font-size:24px;"></i> <span class="sr-only"></span></a>
+         </li>&nbsp;
+         <li class="nav-item">
+           <a class="btn btn-outline-info" href="{% url 'run' %}" title="Run Model"><i class="fa fa-dashboard" style="font-size:24px;"></i> <span class="sr-only"></span></a>
+         </li>&nbsp;
+         <li class="nav-item">
+           <a class="btn btn-outline-info" href="{% url 'ABapp:log_out' %}" title="Logout"><i class="fa fa-sign-out" style="font-size:24px;"></i> <span class="sr-only"></span></a>
+         </li>&nbsp;
+         <li class="nav-item">
+           <a href="https://midway.amazon.com/" target="_blank" class="midway">
+           <img src="https://midway.amazon.com/assets/nextgen/favicon-ad8bbc621403f425c7b3a04d698f59735a441d670f9314e3b92d6281a4415bf3.ico" alt="Click here to login MIDWAY"  height="44"></a>
+         </li>&nbsp;
+       </ul>
+       <form class="form-inline my-2 my-lg-0">
+         <input class="form-control mr-sm-2" type="search" placeholder="Amazon Internal Search" aria-label="Search" id="text1">
+         <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" onclick="javascript: window.open('https://is.amazon.com/search/ALL?q=' +document.getElementById('text1').value);">Internal Search</button>
+
+       </form>
+      </div>
+     </nav>
+    {% elif user.is_authenticated and  user.is_active %}
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+     <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static "image\dashboard.png" %}" width="30" height="30" class="kragha" title="@kragha"></a>&nbsp;
+     <a class="navbar-brand" href="https://accolades.corp.amazon.com/profile/kragha" target="_blank"><img src="{% static 'image/like.png' %}" width="30" height="30" title="You can always thank me with Accolade"></a>
+     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+       <ul class="navbar-nav mr-auto">
+         <li class="nav-item active">
+           <a class="btn btn-outline-info" href="{% url 'index' %}" title="Home"><i class="fa fa-home" style="font-size:24px;"></i> <span class="sr-only">(current)</span></a>
+         </li>&nbsp;
+         <li class="nav-item">
+           <a class="btn btn-outline-primary" href="{% url 'change_password' %}">Welcome {{user.username}}</a>
+         </li>&nbsp;
+         <li class="nav-item">
+           <a class="btn btn-outline-warning" href="{% url 'Buyable' %}" title="Buyability Status"><i class="fa fa-download" style="font-size:24px;"></i> <span class="sr-only"></span></a>
+         </li>&nbsp;
+         <li class="nav-item">
+           <a class="btn btn-outline-info" href="{% url 'ABapp:log_out' %}" title="Logout" ><i class="fa fa-sign-out" style="font-size:24px;"></i> <span class="sr-only"></span></a>
+         </li>
+         <li class="nav-item">
+           <a href="https://midway.amazon.com/" target="_blank" class="midway">
+           <img src="https://midway.amazon.com/assets/nextgen/favicon-ad8bbc621403f425c7b3a04d698f59735a441d670f9314e3b92d6281a4415bf3.ico" alt="Click here to login MIDWAY"  height="44"></a>
+         </li>
+       </ul>
+       <form class="form-inline my-2 my-lg-0">
+         <input class="form-control mr-sm-2" type="search" placeholder="Amazon Internal Search" aria-label="Search" id="text1">
+         <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" onclick="javascript: window.open('https://is.amazon.com/search/ALL?q=' +document.getElementById('text1').value);">Internal Search</button>
+
+       </form>
+      </div>
+     </nav>
+    {% else %}
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+     <a class="navbar-brand" href="#"><img src="{% static "image\dashboard.png" %}" width="30" height="30" class="kragha" title="@kragha"></a>
+     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+       <ul class="navbar-nav mr-auto">
+         <li class="nav-item"><a class="nav-link" href="{% url 'ABapp:log_user' %}">Login</a></li>
+       </ul>
+      </div>
+    </nav><br><br><br><br>
+     <h1>You have to Login to view this page, click login</h1>
+    {% endif %}
+
+
+
+
+
+    <div class="bbb">
+      {% block body_block %}
+      <a href="{% url 'template' %}" class="float" title="Download template">
+      <i class="fa fa-download my-float"></i></a>
+      <canvas id='canv'></canvas>
+      {% endblock %}
+    </div>
+
+
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+<script type="text/javascript" src="https://ricostacruz.com/jquery.transit/jquery.transit.min.js"></script>
+<script type="text/javascript" src="{% static "js/base1.js" %}"></script>
+  </body>
+</html>

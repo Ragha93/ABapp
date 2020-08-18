@@ -1,0 +1,100 @@
+
+thead{
+  background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: black;
+}
+
+.Listtable{
+  overflow-y: scroll;
+  height: 520px;
+}
+
+body{
+  background-color: #858282;
+}
+.bbb{
+  background-color: #d500007a;
+}
+.kragha:hover{
+  box-shadow: 6px 7px 15px black;
+  transition:  all .4s cubic-bezier(0.86, 0, 0.07, 1);
+}
+.navbar-dark{
+  transition: 0.3s;
+}
+.navbar-dark:hover{
+  box-shadow: 4px 8px 15px black;
+}
+.jumbotron{
+  width: 500px;
+  transition: 0.3s;
+  border: 1px solid black;
+}
+#input{
+  width: 600px;
+  background-color: #00000082;
+  color: white;
+}
+#input:hover{
+  box-shadow: 6px 7px 15px black;
+  transition: 0.3s;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Philosopher);
+body {
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+
+}
+
+.float{
+  position:fixed;
+  width:60px;
+  height:60px;
+  bottom:40px;
+  right:40px;
+  background-color:#0C9;
+  color:#FFF;
+  border-radius:50px;
+  text-align:center;
+  transition:  all .4s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+.float:hover{
+  position:fixed;
+  width:60px;
+  height:60px;
+  bottom:40px;
+  right:40px;
+  background-color:#009CCC;
+  color:#FFF;
+  border-radius:50px;
+  text-align:center;
+  box-shadow: 0px 2px 27px black;
+
+}
+
+.my-float{
+  margin-top:22px;
+  font-size: 19px;
+}
+
+
+
+
+button{
+  background-color: #F16669;
+  border: none;
+  padding: 15px 20px;
+  color: white;
+  font-size: 2em;
+  margin-top: 40px;
+  transition: 1s;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+button:hover{
+  background-color: darken(#F16669, 30)
+}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body_block %}
+<br><br><br><br><br><br><br>
+<center>
+  <h1>Before you run, authenticate <a href="https://midway.amazon.com/" target="_blank" class="midway"><img src="https://midway.amazon.com/assets/nextgen/favicon-ad8bbc621403f425c7b3a04d698f59735a441d670f9314e3b92d6281a4415bf3.ico" alt="Click here to login MIDWAY" height="40"></a> in <img src="{% static 'image/browser.png' %}" alt="" width="40" height="40"> and <img src="{% static 'image/firefox.png' %}"width="40" height="40" alt=""> (in your desktop).</h1><br>
+<div class="container">
+  <div class="jumbotron" id="input">
+  <a href="{% url 'Sitestatus' %}" class="btn btn-outline-warning">Buyable</a>
+  <a href="{% url 'Sitestatus1' %}" class="btn btn-outline-warning" >Site Status</a>
+  <!-- <a href="" class="btn btn-outline-warning" onclick= "myFunction1()" >Plan Preview</a> -->
+  </div>
+</div>
+</center>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+{% endblock %}

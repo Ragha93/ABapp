@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body_block %}
+<br>
+<div class="Listtable">
+<table class="table table-hover table-dark">
+  <thead>
+    <tr>
+      <th scope="col">ASIN</th>
+      <th scope="col">Site Status</th>
+    </tr>
+  </thead>
+  {% for info in sitestatus %}
+  <tbody>
+    <tr>
+      <td>{{info.asin}}</td>
+      <td>{{info.sitestatus}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+</div><br>
+<center> <a href="{% url 'Sitedump' %}" class="btn btn-success">Export</a> </center>
+
+<br><br><br><br>
+{% endblock %}

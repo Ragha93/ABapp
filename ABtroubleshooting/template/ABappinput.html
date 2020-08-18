@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block body_block %}
+<br><br><br><br><br><br><br><br>
+<center>
+<div class="container">
+  <div class="jumbotron" id="input">
+    {% if uploaded %}
+    <h1>Upload completed successfully!!!!!!!</h1>
+    {% else %}
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      <input type="file" name="myfile">
+      <button type="submit" class="btn btn-secondary">Upload</button>
+    </form>
+    {% endif %}
+  </div>
+</div>
+</center>
+
+<div class="alert alert-warning" role="alert">
+  <center><a href="" class="btn btn-warning" onclick= "myFunctionalert()" >Important!!!</a></center>
+</div>
+
+
+<a href="{% url 'template' %}" class="float" title="Download template">
+<i class="fa fa-download my-float"></i></a>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+<!-- <script type="text/javascript">
+function myFunctionalert(){
+  alert("Hello there,This tool takes only .xlsx files and you have a limit of 2000 entries per upload and please use the right template by clicking the icon on bottom right corner.");
+}
+</script> -->
+{% endblock %}

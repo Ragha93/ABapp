@@ -1,0 +1,30 @@
+<!doctype html>
+{% load static %}
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8" />
+  <title>Error in upload</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="{% static "image\close.png" %}">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <script type='text/javascript' src='{% static 'js/jquery.particleground.js' %}'></script>
+  <script type='text/javascript' src='{% static 'js/demo.js' %}'></script>
+</head>
+
+<body>
+
+<div id="particles">
+  <div id="intro">
+    <h1>Your Template has failed to upload</h1>
+    <a href="{% url 'template' %}" class="float" title="Download template">
+    <i class="fa fa-download my-float"></i></a>
+    <p>There are either duplicated ASINs that you need to remove.</p>
+    <p>You have uploaded incorrect template. Please use the correct template by clicking the icon.</p>
+    <br>
+    <a href="{% url 'index' %}" class="btn btn-outline-info" title="Go home to start again, dont forget to check template" >Home</a>
+  </div>
+</div>
+</body>
+</html>

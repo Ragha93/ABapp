@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body_block %}
+<br>
+<div class="Listtable">
+<table class="table table-hover table-dark">
+  <thead>
+    <tr>
+      <th scope="col">ASIN</th>
+      <th scope="col">Buyable Status</th>
+      <th scope="col">Bossed Status</th>
+      <th scope="col">Procurability Status</th>
+      <th scope="col">Sourceability Status</th>
+      <th scope="col">IPC Status</th>
+    </tr>
+  </thead>
+  {% for buy in buyable %}
+  <tbody>
+    <tr>
+      <td>{{buy.asin}}</td>
+      <td>{{buy.buyability_status}}</td>
+      <td>{{buy.bossed_user}}</td>
+      <td>{{buy.procurability_status}}</td>
+      <td>{{buy.sourceability_status}}</td>
+      <td>{{buy.IPCstatus}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+</div><br>
+<center> <a href="{% url 'export' %}" class="btn btn-success">Export</a> </center>
+
+<br><br><br><br>
+{% endblock %}

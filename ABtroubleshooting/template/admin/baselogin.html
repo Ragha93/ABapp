@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block body_block %}
+{% load static %}
+<!-- <link rel="stylesheet" href="{% static "css\index.css" %}"> -->
+
+<div class="margin50tp"></div>
+
+{% if user.is_authenticated %}
+<div class="row">
+  <div class="col-6"><canvas id="canvas" width="400" height="400"></canvas></div>
+  <div class="col-6"> <h1>You are logged in as {{ user.username }}</h1></div>
+</div>
+
+{% else %}
+<div class="row">
+  <div class="col-6"><canvas id="canvas" width="400" height="400"></canvas></div>
+  <div class="col-6"> <h1>Welcome to WTS!! <br>Please login....</h1></div>
+</div>
+
+{% endif %}
+
+<div class="margin50bt"></div>
+<script type="text/javascript" src="{% static "js\index.js" %}"></script>
+{% endblock %}

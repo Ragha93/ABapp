@@ -1,0 +1,109 @@
+body {
+  background-color: #002c52;
+  text-align: center;
+}
+.area {
+  display: inline-block;
+  width: 500px;
+  height: auto;
+  background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+  border: 1px solid #556b51;
+  margin: 10px 0;
+  padding: 20px 0;
+  text-align: center;
+  transition: all ease 0.5s;
+  border-radius: 1rem;
+  font-family: "Amazon Ember Cd RC";
+  font-size: 21px;
+}
+.jumbotron {
+  color: white;
+}
+a{
+  color: white;
+}
+.h1 {
+  padding: 0 50px;
+  margin: 0 1px;
+  background-color: #000;
+  color: #fff;
+}
+.input-parts {
+  margin-bottom: 10px;
+  border: 0;
+  border-bottom: 1px solid #556b51;
+  border-radius: 10px;
+  background-color: #c6fcbf;
+  outline: none;
+  font-size: 16px;
+  text-align: center;
+  color: #30690d;
+  transition: all ease 0.5s;
+}
+.input-parts:focus {
+  background-color: #a5ffa3;
+}
+.input-parts:hover {
+  letter-spacing: 2px;
+  border-radius: 0px;
+}
+.gender-area {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  padding-right: 25px;
+  background-color: #a8d18d;
+  transition: all ease 0.5s;
+}
+.gender-area:hover {
+  letter-spacing: 2px;
+}
+.gender {
+  margin: 20px 10px 3px 20px;
+  width: 20px;
+  height: 20px;
+}
+.btn {
+  margin-top: 20px;
+  padding: 10px 25px;
+  border: none;
+  border-bottom: 2px solid #556b51;
+  border-right: 2px solid #556b51;
+  color: #000;
+  background-color: #d5dfe5;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: "Amazon Ember Cd RC";
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  outline: none;
+  transition: all ease 0.5s;
+  border-radius: 1rem;
+  text-decoration: none;
+}
+.btn:hover{
+  background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+  box-shadow: 9px 8px 15px black;
+}
+h4 {
+  color: #30690d;
+}
+/* TOP margin CSS kragha */
+.margin50tp{margin-top: 50px;}
+.margin100tp{margin-top: 100px;}
+.margin200tp{margin-top: 200px;}
+.margin300tp{margin-top: 300px;}
+/* TOP margin CSS kragha */
+
+/* Bottom margin CSS kragha */
+.margin20bt{ margin-bottom: 20px;}
+.margin50bt{ margin-bottom: 50px;}
+.margin100bt{ margin-bottom: 100px;}
+.margin120bt{ margin-bottom: 120px;}
+.margin200bt{ margin-bottom: 200px;}
+.margin300bt{ margin-bottom: 300px;}
+/* Bottom margin CSS kragha */
+
+.danger{
+  background-color: #f6c0c5;
+}

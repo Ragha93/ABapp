@@ -1,0 +1,271 @@
+.kragha:hover{
+  box-shadow: 6px 7px 15px black;
+  transition:  all .4s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+
+/*######################### Background kragha ############################# */
+@import url('https://fonts.googleapis.com/css?family=Exo:400,700');
+
+*{  margin: 0px;
+    padding: 0px;
+}
+body{
+    font-family: 'Exo', sans-serif;
+}
+.context {
+    width: 100%;
+    position: absolute;
+    top:35vh;
+
+}
+.context h1{
+    text-align: center;
+    color: #fff;
+    font-size: 65px;
+    font-family:'Orbitron', sans-serif;
+    text-shadow: 0px 0px 18px dodgerblue;
+}
+.area{
+    /* background: #002c52;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(255, 250, 250, 0.15) 100%), radial-gradient(at top center, rgba(255, 249, 249, 0.4) 0%, rgba(0, 0, 0, 0.55) 120%) #6a6a6a; */
+    background-blend-mode: multiply,multiply;
+    width: 100%;
+    height:100vh;
+    background-color: #282727;
+}
+.circles{
+    position: inherit;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.circles li{
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background-image: linear-gradient(to top, #4481eb78 0%, #04befe70 100%);
+    animation: animate 25s linear infinite;
+    bottom: -150px;
+}
+.circles li:nth-child(1){
+    left: 15%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 0s;
+}
+.circles li:nth-child(2){
+    left: 10%;
+    width: 50px;
+    height: 50px;
+    animation-delay: 2s;
+    animation-duration: 12s;
+}
+.circles li:nth-child(3){
+    left: 85%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 4s;
+}
+.circles li:nth-child(4){
+    left: 80%;
+    width: 60px;
+    height: 60px;
+    animation-delay: 0s;
+    animation-duration: 18s;
+}
+.circles li:nth-child(5){
+    left: 95%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 0s;
+}
+.circles li:nth-child(6){
+    left: 85%;
+    width: 110px;
+    height: 110px;
+    animation-delay: 3s;
+}
+.circles li:nth-child(7){
+    left: 7%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 7s;
+}
+.circles li:nth-child(8){
+    left: 22%;
+    width: 25px;
+    height: 25px;
+    animation-delay: 15s;
+    animation-duration: 45s;
+}
+.circles li:nth-child(9){
+    left: 20%;
+    width: 15px;
+    height: 15px;
+    animation-delay: 2s;
+    animation-duration: 35s;
+}
+.circles li:nth-child(10){
+    left: 85%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 0s;
+    animation-duration: 11s;
+}
+@keyframes animate {
+    0%{
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 5;
+    }
+
+    100%{
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+}
+/*######################### Background kragha ############################# */
+/*######################### Menu kragha ############################# */
+/* Both
+**********************************************/
+
+@import url( https://fonts.googleapis.com/css?family=Quantico );
+body {
+  background-color: #333;
+  font-size       : 22px;
+}
+
+nav {
+  overflow : hidden;
+}
+
+nav input[type=checkbox] {
+  display : none;
+}
+
+menu {
+  position : relative;
+  transition  : all .4s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+label {
+  position: relative;
+  z-index : 2;
+}
+
+li {
+  list-style-type: none;
+}
+
+a , label {
+  display : block !important;
+  width   : auto  !important;
+  text-decoration : none;
+  /* background      : linear-gradient(#292929, #242424); */
+  color   : #FFF;
+  padding : 20px 23px;
+  /* border  : 1px solid black; */
+  left : 886px;
+}
+
+a:after {
+  content : '';
+  position: absolute;
+  display : none;
+  font-size   : 18px;
+  font-family: 'Quantico' , georgia;
+  line-height : 18px;
+  text-align : center;
+  color  : #fff;
+  text-shadow : none;
+  padding : 30px 20px;
+  text-transform : capitalize;
+}
+
+
+li:hover a:after {
+  display : block;
+}
+
+li:first-child:hover a:after {
+  content : 'home';
+}
+
+li:nth-child(2):hover a:after {
+  content : 'about';
+}
+
+li:nth-child(3):hover a:after {
+  content : 'gallery';
+}
+
+li:nth-child(4):hover a:after {
+  content : 'video';
+}
+
+span {
+  display     : inline-block;
+  transition : all .4s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+/* outerline */
+menu a:hover {
+  box-shadow  : inset 0 0 0 4px dodgerblue;
+  text-shadow : 0 0 2px #08a0ff;
+  background  : #1B1B1B;
+}
+
+/* Horizontal
+**********************************************/
+
+.horizontal label {
+    float : left;
+}
+
+.horizontal menu {
+    float : center;
+    left :  299px;
+    top  : 0px;
+}
+
+.horizontal li {
+  float : left;
+}
+
+.horizontal a , .horizontal label {
+  border-right-color : rgba(255,255,255,0.1);
+}
+
+.horizontal li:last-child a {
+  /* border-right : 1px solid black ; */
+}
+
+/* .horizontal a:after {
+  top     : 0;
+  left    : 30%;
+} */
+
+.horizontal span {
+  transform  : rotate(-90deg);
+}
+
+#toggle:checked ~ menu {
+  left       : -608px;
+  transition : left .4s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+#toggle:checked ~ label span {
+  transform : rotate(0deg);
+  transition : all .4s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+/*######################### Menu kragha ############################# */
+
+/* git remote add origin https://github.com/Ragha93/ABtest.git
+git push -u origin master */
