@@ -206,7 +206,7 @@ def kragha(request):
         for (w,vv,uvw,pk) in Site:
             print("currently checking {}, {} out of {}".format(w,num,total))
             num = num + 1
-            url2 = "http://offerservice-dumper-tools.integ.amazon.com:8000/v2/ajax/call_offer_service.cgi?website=Amazon.com&domain=prod&realm=USAmazon&mkid=1&method=getOfferListingsForASIN&asin={0}&condition=Any&mid=1&sku={0}&fmid=&listingType=purchasable&discriminator=".format(w)
+            url2 = "URL".format(w)
             r = requests.get(url2)
             o = r.json()
             newdict = {"asin" : o['input']['asin'],"Result" :o['response']}
@@ -216,19 +216,19 @@ def kragha(request):
                 newdict = {"asin" : x,"Result" : y}
                 # New try
                 # Sourceability and procurability
-                driver.get('https://src-na.corp.amazon.com/getDetailedProcurabilityByIOG?asin={0}&iog=1'.format(newdict['asin']))
+                driver.get('url'.format(newdict['asin']))
                 x = driver.find_element_by_xpath("/html/body").text
                 ww = str(re.findall(r'"statusReasonCode":"(.*?)"', x)).strip(remove)
                 xx = str(re.findall(r'"calculatedStatus":"(.*?)"', x)).strip(remove)
 
-                driver.get('https://src-na.corp.amazon.com/getSourceability?fnsku={asin}&orderingCodes={code}'.format(asin=w,code=vv))
+                driver.get('url'.format(asin=w,code=vv))
                 x = driver.find_element_by_xpath("/html/body").text
                 uu = str(re.findall(r'"sourceabilityReason":"(.*?)"', x)).strip(remove)
                 vw = str(re.findall(r'"effectiveSourceabilityStatus":"(.*?)"', x)).strip(remove)
 
                 # IPC
                 ipc_dict = {}
-                driver.get('https://vendorselection-na-iad.iad.proxy.amazon.com/asinSearch?scopeId=AMAZON_US&asin={asin}'.format(asin=w))
+                driver.get('url'.format(asin=w))
                 xy = json.loads(driver.find_element_by_xpath("/html/body").text)
                 try:
                     # 1 ASIN not found, no planning#####################################*************************************
@@ -1125,7 +1125,7 @@ def kragha1(request):
         for (asin,allocatedto) in Sitestatus:
             print("currently checking {}, {} out of {}".format(asin,num,total))
             num = num + 1
-            url2 = "http://offerservice-dumper-tools.integ.amazon.com:8000/v2/ajax/call_offer_service.cgi?website=Amazon.com&domain=prod&realm=USAmazon&mkid=1&method=getOfferListingsForASIN&asin={0}&condition=Any&mid=1&sku={0}&fmid=&listingType=purchasable&discriminator=".format(asin)
+            url2 = "url".format(asin)
             r = requests.get(url2)
             o = r.json()
             newdict = {"asin" : o['input']['asin'],"Result" :o['response']}
